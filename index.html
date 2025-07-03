@@ -2,15 +2,40 @@
 <html>
 <head>
 <title>Test Google Glass WX site</title>
+
+<style>
+
+img {
+	width: 200px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div id="testDiv">test<div>
+<div id="testDiv">test</div>
+
+
+
+<image id="streamImg1" src="http://174.101.147.180:8000/videoFrame1.png">
+
+
+
+
+
+
+
 
 </body>
 
 <script>
+
+
+setInterval(function() {
+	document.getElementById("streamImg1").src="http://174.101.147.180:8000/videoFrame1.png?randNum=" + Math.random();
+	}, 5000);
 
 //Listen for arrow key presses and go one stream to the left/right
 document.onkeydown = checkKey;
@@ -31,7 +56,7 @@ function checkKey(e) {
 }
 
 function moveStream(direction) {
-	document.getElementById("testDiv").textContent = direction;
+	document.getElementById("testDiv").innerText = direction;
 }
 
 </script>
