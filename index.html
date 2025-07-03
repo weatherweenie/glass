@@ -6,7 +6,34 @@
 
 <body>
 
-Test
+<div id="testDiv">test<div>
 
 </body>
+
+<script>
+
+//Listen for arrow key presses and go one stream to the left/right
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+	e = e || window.event;
+
+	//keycodes: 38up 40down 37left 39right
+
+	if (e.keyCode == 37) { //left arrow
+		moveStream("Left");
+	}
+	else if (e.keyCode == 39) { //right arrow
+		moveStream("Right");
+	}
+
+}
+
+function moveStream(direction) {
+	document.getElementById("testDiv").textContent = direction;
+}
+
+</script>
+
 </html>
